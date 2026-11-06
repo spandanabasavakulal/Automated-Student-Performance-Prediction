@@ -373,10 +373,10 @@ df["performance"] = np.where(df["G3"] < 10, 0, 1)
 
 ### Class definitions
 
-    Encoded label Category          Condition
-  --------------- ----------------- ------------
-                0 At Risk           `G3 < 10`
-                1 Performing Well   `G3 >= 10`
+    Encoded label    Category         Condition
+  --------------- ---------------  ------------
+        0             At Risk            `G3 < 10`
+        1          Performing Well      `G3 >= 10`
 
 **Important:** The class mapping must remain consistent throughout
 training, evaluation, model saving, and Streamlit prediction.
@@ -576,41 +576,19 @@ must receive the same transformations during prediction.
 
   ----------------------------------- -----------------------------------
 
-  Logistic Regression                 Linear classification model that
+  Logistic Regression                 Linear classification model that estimates class probabilities.
 
-                                      estimates class probabilities.
+  Decision Tree                       Tree-based model that learns decision rules from feature values.
 
-  Decision Tree                       Tree-based model that learns
+  Gradient Boosting                       Ensemble of decision trees trained using randomized samples and feature selection.
 
-                                      decision rules from feature values.
+  Extra Trees                         Tree ensemble that introduces additional randomization when selecting splits.
 
-  Gradient Boosting                       Ensemble of decision trees trained
+  Support Vector Machine              Classifier that identifies a separating boundary between classes.
 
-                                      using randomized samples and
+  Gradient Boosting                   Sequential ensemble method in which new trees attempt to correct previous errors.
 
-                                      feature selection.
-
-  Extra Trees                         Tree ensemble that introduces
-
-                                      additional randomization when
-
-                                      selecting splits.
-
-  Support Vector Machine              Classifier that identifies a
-
-                                      separating boundary between
-
-                                      classes.
-
-  Gradient Boosting                   Sequential ensemble method in which
-
-                                      new trees attempt to correct
-
-                                      previous errors.
-
-  HistGradientBoosting                Histogram-based gradient boosting
-
-                                      implementation.
+  HistGradientBoosting                Histogram-based gradient boosting implementation.
 
   -----------------------------------------------------------------------
 
@@ -705,10 +683,10 @@ experiment for the Mathematics dataset, using the 80:20 split with
 `random_state=42`.
 
 ### 11.1 Baseline Gradient Boosting — held-out test results
-Metric	Score
-Accuracy	0.8987 (89.87%)
-Balanced accuracy	0.9147 (91.47%)
-Macro F1-score	0.8910
+Metric	             Score
+Accuracy	         0.8987 (89.87%)
+Balanced accuracy	 0.9147 (91.47%)
+Macro F1-score	     0.8910
 
 
 Confusion matrix, with labels [At Risk, Performing Well]:
@@ -722,10 +700,10 @@ The baseline correctly identified 25 of 26 at-risk students and missed 1. Seven 
 ### 11.2 Tuned Gradient Boosting
 
 The tuned model's held-out test results were:
-Metric	Score
-Accuracy	0.8861 (88.61%)
+Metric	            Score
+Accuracy	        0.8861 (88.61%)
 Balanced accuracy	0.8955 (89.55%)
-Macro F1-score	0.8765
+Macro F1-score	    0.8765
 
 
 Confusion matrix:
